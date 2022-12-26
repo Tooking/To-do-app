@@ -1,14 +1,14 @@
-// window.addEventListener('load', async () => {
-//     if ('serviceWorker' in navigator) {
-//         try {
-//             const reg = await navigator.serviceWorker.register('/sw.js')
-//             console.log('Service worker register success', reg)
-//         } catch (e) {
-//             console.log('Service worker register fail')
-//         }
-//     }
+window.addEventListener('load', async () => {
+    if ('serviceWorker' in navigator) {
+        try {
+            const reg = await navigator.serviceWorker.register('/registerServiceWorker.js')
+            console.log('Service worker register success', reg)
+        } catch (e) {
+            console.log('Service worker register fail')
+        }
+    }
     
-// })
+})
 
 const express = require('express')
 const path = require('path')

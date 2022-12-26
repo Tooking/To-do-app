@@ -1,7 +1,7 @@
 {
     "background_color": "white",
     "description": "To do app",
-    "display": "standalone",
+    "display": "fullscreen",
     "orientation": "portrait",
     "icons":[
         {
@@ -27,5 +27,5 @@
 ],
     "name": "Todo",
     "short_name": "To-do",
-    "start_url": "/public/"
+    "start_url": "/public/index.html"
 }
