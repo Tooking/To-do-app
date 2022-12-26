@@ -1,0 +1,43 @@
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10em;
+    font-size: 1.5rem;
+
+    background: grey;
+}
+
+.menu a{
+    color: white;
+}
+
+.menu a:active{
+    text-decoration: none;
+}
+
+.title{
+    text-align: center;
+    margin: 2rem;
+}
+
+@media (max-width: 480px){
+    .menu{
+        gap: 5em;
+    }
+
+    .form_style{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+   .form_group_style{
+    margin: 0 !important;
+    padding: 0;
+   }
+}
