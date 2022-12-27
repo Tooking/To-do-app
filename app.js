@@ -10,26 +10,26 @@ let TASKS = [
 app.use(express.json())
 
 //GET
-app.get('https://to-do-app-ten-plum.vercel.app/api/tasks', (req, res)=>{
+app.get('/api/tasks', (req, res)=>{
         res.status(200).json(TASKS)
 })
 
 
 //POST
-app.post('https://to-do-app-ten-plum.vercel.app/api/tasks', (req, res) =>{
+app.post('/api/tasks', (req, res) =>{
     const task = {...req.body, id: v4(), marked: false}
     TASKS.push(task)
     res.status(201).json(task)
 })
 
 //DELETE
-app.delete('https://to-do-app-ten-plum.vercel.app/api/tasks/:id', (req, res) =>{
+app.delete('/api/tasks/:id', (req, res) =>{
     TASKS = TASKS.filter(t => t.id !== req.params.id)
     res.status(200).json({message: "Task has been deleted"})
 })
 
 //PUT
-app.put('https://to-do-app-ten-plum.vercel.app/api/tasks/:id', (req, res)=>{
+app.put('/api/tasks/:id', (req, res)=>{
     const idx = TASKS.findIndex(t => t.id === req.params.id)
     TASKS[idx] = req.body
     res.json(TASKS[idx])

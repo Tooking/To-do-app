@@ -31,7 +31,7 @@ new Vue({
         async createTask() {
             const {...task} = this.form
 
-            const newTask = await request('https://to-do-app-ten-plum.vercel.app/api/tasks', 'POST', task)
+            const newTask = await request('/api/tasks', 'POST', task)
 
             this.tasks.push(newTask)
 
@@ -39,7 +39,7 @@ new Vue({
         },
         async markTask(id){
             const task = this.tasks.find(t => t.id === id)
-            const updated = await request(`https://to-do-app-ten-plum.vercel.app/api/tasks/:${id}`, 'PUT', {
+            const updated = await request(`/api/tasks/:${id}`, 'PUT', {
                 ...task, 
                 marked: true
             })
@@ -47,13 +47,13 @@ new Vue({
             
         },
         async removeTask(id){
-            await request(`https://to-do-app-ten-plum.vercel.app/api/tasks/${id}`, 'DELETE')
+            await request(`/api/tasks/${id}`, 'DELETE')
             this.tasks = this.tasks.filter(t => t.id !== id)
         }
     },
     async mounted(){
         this.loading = true;
-        this.tasks = await request('https://to-do-app-ten-plum.vercel.app/api/tasks');
+        this.tasks = await request('/api/tasks');
         this.loading = false;
     }
 })
